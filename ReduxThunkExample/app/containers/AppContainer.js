@@ -1,18 +1,18 @@
 
-// import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import App from '../../App';
+import App from '../components/App';
 
-import { getPageList } from '../actions/pageList';
+import { getProfileData, login } from '../actions/profile';
 
 const mapStateToProps = (state) => ({
-    pageList: state.pageList.pageList,
+    profileStatus: state.profile.status,
 });
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({
-        getPageList,
+        getProfileData,
+        login,
     },
     dispatch
 );
