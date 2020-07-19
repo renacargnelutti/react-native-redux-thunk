@@ -4,11 +4,15 @@ import { bindActionCreators } from 'redux';
 
 import App from '../components/App';
 
+import { getProfileData, login } from '../actions/profile';
+
 const mapStateToProps = (state) => ({
-    state,
+    profileStatus: state.profile.status,
 });
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({
+        getProfileData,
+        login,
     },
     dispatch
 );
